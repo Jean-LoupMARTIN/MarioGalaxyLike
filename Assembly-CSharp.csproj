@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{88B4F364-B7AC-D587-93E5-3C8BE4A93057}</ProjectGuid>
+    <ProjectGuid>{F37A6445-C8DF-B36B-83FE-0835CEC2F990}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,60 +58,60 @@
   <ItemGroup>
     <Compile Include="Assets/Script/Rotate.cs" />
     <Compile Include="Assets/Script/Extension/MathExtension.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Samples/Scripts/FlowTexture.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/DynamicShadowProjectorRendererData.cs" />
     <Compile Include="Assets/Script/Gravity/DrawGravity.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/FollowTargetObject.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/DrawSceneObjectForLWRP.cs" />
     <Compile Include="Assets/Script/Controller/RandController.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Utils/ObjectPool.cs" />
     <Compile Include="Assets/Script/Gravity/RigidbodyGravity.cs" />
     <Compile Include="Assets/Script/Gravity/GravitySphere.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Test/CullingTest.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/Rotate.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/DrawTargetObject.cs" />
+    <Compile Include="Assets/Script/Extension/ShakeExtension.cs" />
     <Compile Include="Assets/Script/Controller/InputController.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/FPSCheck.cs" />
     <Compile Include="Assets/Script/Player/Player.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererPassManager.cs" />
+    <Compile Include="Assets/Imported/Shake/Scripts/Utilities/CameraUtilities.cs" />
+    <Compile Include="Assets/Imported/Shake/Demo/ShakeDemo.cs" />
+    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeByDistance.cs" />
     <Compile Include="Assets/Script/Controller/Controller.cs" />
+    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeOnKeyPress.cs" />
     <Compile Include="Assets/Script/Gravity/GravityField.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/ShadowTextureRendererForLWRP.cs" />
     <Compile Include="Assets/Script/Gravity/Gravity.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Utils/StencilMaskAllocator.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/ShadowTextureRenderer.cs" />
     <Compile Include="Assets/Imported/URP/TutorialInfo/Scripts/Readme.cs" />
+    <Compile Include="Assets/Imported/Shake/Scripts/CameraShaker.cs" />
+    <Compile Include="Assets/Script/Player/PlayerDash.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/Swing.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererPass.cs" />
     <Compile Include="Assets/Script/Player/PlayerLandingEstimation.cs" />
+    <Compile Include="Assets/Imported/Shake/Scripts/CameraShakeInstance.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/ProjectorRendererFeature.cs" />
     <Compile Include="Assets/Script/Extension/AudioSourceExtension.cs" />
     <Compile Include="Assets/Script/Extension/GizmosExtension.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/AdditionalProjectorRenderer.cs" />
+    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeOnTrigger.cs" />
     <Compile Include="Assets/Script/Extension/PostProcessingExtension.cs" />
     <Compile Include="Assets/Script/Extension/TransformExtension.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/DrawSceneObject.cs" />
     <Compile Include="Assets/Script/MoveWithRef.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/RenderShadowTexturePass.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/SRP/Scripts/ProjectorForSRP.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/MipmappedShadowFallback.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/PropertyBlockForTransparentReceiver.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererInterface.cs" />
     <Compile Include="Assets/Script/Gravity/GravityCube.cs" />
     <Compile Include="Assets/Script/FollowTarget.cs" />
     <Compile Include="Assets/Script/Extension/PhysicsExtension.cs" />
     <Compile Include="Assets/Imported/InputAction/InputActions.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/ShadowTextureRendererForLWRP.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/SRP/Scripts/ProjectorForSRP.cs" />
-    <Compile Include="Assets/Imported/Shake/Scripts/Utilities/CameraUtilities.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/ProjectorRendererFeature.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/AdditionalProjectorRenderer.cs" />
-    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeOnTrigger.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/FollowTargetObject.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Samples/Scripts/FlowTexture.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/ProjectorForLWRP.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/Rotate.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/PropertyBlockForTransparentReceiver.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/DynamicShadowProjectorRendererData.cs" />
-    <Compile Include="Assets/Imported/Shake/Scripts/CameraShaker.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Utils/StencilMaskAllocator.cs" />
-    <Compile Include="Assets/Imported/Shake/Demo/ShakeDemo.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/DrawSceneObjectForLWRP.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/MipmappedShadowFallback.cs" />
-    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeByDistance.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/FPSCheck.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererInterface.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/DrawSceneObject.cs" />
-    <Compile Include="Assets/Imported/Shake/Demo/Sample Scripts/ShakeOnKeyPress.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Test/CullingTest.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererPassManager.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/RenderShadowTexturePass.cs" />
     <Compile Include="Assets/Imported/Shake/Scripts/CameraShakePresets.cs" />
-    <Compile Include="Assets/Imported/Shake/Scripts/CameraShakeInstance.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Samples/Scripts/Swing.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/CustomRendererPass.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/DrawTargetObject.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/ShadowTextureRenderer.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Utils/ObjectPool.cs" />
-    <Compile Include="Assets/Script/Extension/ShakeExtension.cs" />
-    <Compile Include="Assets/Script/Player/PlayerDash.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/ProjectorForLWRP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Imported/DynamicShadowProjector/Shaders/Projector/Dynamic/LightxShadowWithLinearFalloff.shader" />
@@ -914,7 +914,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SimpleMinMaxSlider.csproj">
-      <Project>{63380BD1-CC50-6517-D8F9-33449D4FFEA0}</Project>
+      <Project>{3B902420-7DCC-5EE0-3243-FEA3A62A13FC}</Project>
       <Name>SimpleMinMaxSlider</Name>
     </ProjectReference>
   </ItemGroup>

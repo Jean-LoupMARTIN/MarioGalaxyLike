@@ -146,19 +146,17 @@ public class Player : MonoBehaviour
             CheckGround();
 
 
-        //Vector3 localVelocity = LocalVelocity;
-
         if (grounded)
         {
-            //localVelocity.y = 0;
+            Vector3 localVelocity = LocalVelocity;
+            localVelocity.y = 0;
             RotationMatchGravity();
+            LocalVelocity = localVelocity;
         }
 
         else RotateWithLandingEstimation();
 
         Rotate();
-
-        //LocalVelocity = localVelocity;
 
         if (!grounded) ApplyGravity();
         ApplyAcceleration();
@@ -176,7 +174,12 @@ public class Player : MonoBehaviour
             rb.AddRelativeForce(stickL3 * (grounded ? acceGround : acceAir), ForceMode.Acceleration);
     }
 
-    void Rotate() => transform.Rotate(0, (grounded ? rotSpeedGround : rotSpeedAir) * Time.fixedDeltaTime * controller.StickR.x, 0);
+    void Rotate()
+    {
+        Vector3 localVelocity = LocalVelocity;
+        transform.Rotate(0, (grounded ? rotSpeedGround : rotSpeedAir) * Time.fixedDeltaTime * controller.StickR.x, 0);
+        LocalVelocity = localVelocity;
+    }
 
     void RotationMatchGravity() => transform.MatchUp(-gravity.dir);
 

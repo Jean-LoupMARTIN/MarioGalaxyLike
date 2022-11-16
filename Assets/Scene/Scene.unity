@@ -1359,7 +1359,7 @@ MonoBehaviour:
   dragGround: 10
   dragAir: 1
   rotSpeedGround: 180
-  rotSpeedAir: 180
+  rotSpeedAir: 90
   jumpVelocityY: 15
   jumpVelocityXZ: 7.5
   cancelCheckGroundAfterJump: 0.25

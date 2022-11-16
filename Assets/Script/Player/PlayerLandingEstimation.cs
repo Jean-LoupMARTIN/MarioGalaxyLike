@@ -44,8 +44,6 @@ public class PlayerLandingEstimation : MonoBehaviour
             float dt = Mathf.Min(Time.fixedDeltaTime, time - t);
             t += dt;
 
-            //Vector3 localVelocity = Quaternion.Inverse(rot) * velocity;
-
             // rotate with last landing estimation
             if (lastResult != null)
             {
@@ -56,9 +54,9 @@ public class PlayerLandingEstimation : MonoBehaviour
             }
 
             // rotate
+            Vector3 localVelocity = Quaternion.Inverse(rot) * velocity;
             rot *= Quaternion.Euler(0, player.RotSpeedAir * dt * controller.StickR.x, 0);
-
-            //velocity = rot * localVelocity;
+            velocity = rot * localVelocity;
 
             // apply gravity
             velocity += Gravity.AcceAtPos(pos) * dt;

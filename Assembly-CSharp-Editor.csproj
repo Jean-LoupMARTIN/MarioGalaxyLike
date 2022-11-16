@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BC356445-20FA-889F-9E10-18C7CC55BE66}</ProjectGuid>
+    <ProjectGuid>{F73B0A85-46CA-B36E-4EDC-4574BA12AEB9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -56,18 +56,18 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Imported/URP/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/PostprocessBuildCheck.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/ProjectorEditor.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/PropertyBlockForTransparentReceiverEditor.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/Editor/DeleteObsoleteObjects.cs" />
     <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/DrawTargetObjectEditor.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/ProjectorMaterialPreprocessor.cs" />
     <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/ShadowTextureRendererEditor.cs" />
     <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/MipmappedShadowFallbackEditor.cs" />
-    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/ProjectorShaderGUI.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/ProjectorEditor.cs" />
+    <Compile Include="Assets/Imported/URP/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
     <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/EditorBase.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/DynamicShadowProjectorExtensionForLWRP-master-universalrp/Scripts/Editor/DeleteObsoleteObjects.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/PropertyBlockForTransparentReceiverEditor.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/ProjectorMaterialPreprocessor.cs" />
     <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/DrawSceneObjectEditor.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/ProjectorForLWRP-master-universalrp/Scripts/Editor/PostprocessBuildCheck.cs" />
+    <Compile Include="Assets/Imported/DynamicShadowProjector/Scripts/Editor/ProjectorShaderGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -874,11 +874,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{88B4F364-B7AC-D587-93E5-3C8BE4A93057}</Project>
+      <Project>{F37A6445-C8DF-B36B-83FE-0835CEC2F990}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="SimpleMinMaxSlider.csproj">
-      <Project>{63380BD1-CC50-6517-D8F9-33449D4FFEA0}</Project>
+      <Project>{3B902420-7DCC-5EE0-3243-FEA3A62A13FC}</Project>
       <Name>SimpleMinMaxSlider</Name>
     </ProjectReference>
   </ItemGroup>
