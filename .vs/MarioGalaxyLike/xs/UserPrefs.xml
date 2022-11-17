@@ -1,10 +1,5 @@
 ﻿<Properties StartupConfiguration="{F37A6445-C8DF-B36B-83FE-0835CEC2F990}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Player/PlayerLandingEstimation.cs">
-    <Files>
-      <File FileName="Assets/Script/Player/Player.cs" Line="188" Column="57" />
-      <File FileName="Assets/Script/Player/PlayerLandingEstimation.cs" Line="57" Column="72" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54db3cf6-bc56-4be4-b283-8f18bd453eb9" />

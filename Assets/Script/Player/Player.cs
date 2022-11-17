@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody), typeof(MoveWithRef), typeof(PlayerLandingEstimation))]
+[RequireComponent(typeof(Rigidbody), typeof(MoveWithRef))]
 public class Player : MonoBehaviour
 {
     [SerializeField] Controller controller;
@@ -16,12 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float rotSpeedGround = 180;
     [SerializeField] float rotSpeedAir = 180;
     (Vector3 dir, float dist, GravityField field) gravity = (Vector3.zero, float.MaxValue, null);
-
-    [Space(10), Header("Jump"), Space(5)]
-    [SerializeField] float jumpVelocityY = 20;
-    [SerializeField] float jumpVelocityXZ = 20;
-    [SerializeField] float cancelCheckGroundAfterJump = 0.5f;
-    float lastJumpTime = -1000;
+    bool fieldHasChanged = false;
 
     [Space(10), Header("Ground"), Space(5)]
     [SerializeField] float playerRadius = 0.25f;
@@ -39,8 +34,6 @@ public class Player : MonoBehaviour
 
     Rigidbody rb;
     MoveWithRef moveWithRef;
-    PlayerLandingEstimation landingEstimation;
-    LandingEstimationResult landingEstimationResult = null;
 
 
 
@@ -49,24 +42,23 @@ public class Player : MonoBehaviour
     public Vector3 Velocity { get => rb.velocity; set => rb.velocity = value; }
     public Vector3 LocalVelocity { get => transform.InverseTransformDirection(Velocity); set => Velocity = transform.TransformDirection(value); }
     public bool Grounded { get => grounded; }
-    public LandingEstimationResult LandingEstimationResult { get => landingEstimationResult; }
     public float AcceAir { get => acceAir; }
     public float DragAir { get => dragAir; }
     public float RotSpeedAir { get => rotSpeedAir; }
+    public float CancelCheckGroundTime { set => cancelCheckGroundTime = value; }
 
 
-    void SetGrounded(bool grounded)
+    public void SetGrounded(bool grounded)
     {
         if (this.grounded == grounded)
             return;
 
         this.grounded = grounded;
         rb.drag = grounded ? dragGround : dragAir;
-        landingEstimationResult = null;
     }
 
 
-    void SetGroundCollider(Collider collider)
+    public void SetGroundCollider(Collider collider)
     {
         if (groundCollider == collider)
             return;
@@ -77,11 +69,11 @@ public class Player : MonoBehaviour
 
     void SetGravity((Vector3 dir, float dist, GravityField field) gravity)
     {
+        fieldHasChanged = gravity.field != this.gravity.field;
         this.gravity = gravity;
         UpdateMoveWithRefTransfrom();
     }
 
-    float TimeSinceLastJump => Time.time - lastJumpTime;
     bool CancelCheckGround => Time.time < cancelCheckGroundTime;
 
 
@@ -124,45 +116,37 @@ public class Player : MonoBehaviour
         rb.drag = grounded ? dragGround : dragAir;
 
         moveWithRef = GetComponent<MoveWithRef>();
-        landingEstimation = GetComponent<PlayerLandingEstimation>();
-    }
-
-    void OnEnable()
-    {
-        controller.X.OnPressDown.AddListener(Jump);
-    }
-
-    void OnDisable()
-    {
-        controller.X.OnPressDown.RemoveListener(Jump);
     }
 
 
     void FixedUpdate()
     {
-        UpdateGravity();
+        CacheGravity();
 
         if (!CancelCheckGround)
             CheckGround();
 
+        Vector3 localVelocity = Vector3.zero;
 
-        if (grounded)
-        {
-            Vector3 localVelocity = LocalVelocity;
-            localVelocity.y = 0;
-            RotationMatchGravity();
-            LocalVelocity = localVelocity;
-        }
+        // if gravity field has not chaged since the last frame
+        // -> get local velocity before RotationMatchGravity
+        if (!fieldHasChanged) localVelocity = LocalVelocity;
 
-        else RotateWithLandingEstimation();
+        RotationMatchGravity();
+
+        // else -> get local velocity after RotationMatchGravity
+        if (fieldHasChanged) localVelocity = LocalVelocity;
 
         Rotate();
+
+        if (grounded) localVelocity.y = 0;
+        LocalVelocity = localVelocity;
 
         if (!grounded) ApplyGravity();
         ApplyAcceleration();
     }
 
-    void UpdateGravity() => SetGravity(Gravity.AtPos(transform.position));
+    void CacheGravity() => SetGravity(Gravity.AtPos(transform.position));
 
     void ApplyGravity() => rb.AddForce(gravity.dir * Gravity.inst.Acceleration, ForceMode.Acceleration);
 
@@ -174,23 +158,9 @@ public class Player : MonoBehaviour
             rb.AddRelativeForce(stickL3 * (grounded ? acceGround : acceAir), ForceMode.Acceleration);
     }
 
-    void Rotate()
-    {
-        Vector3 localVelocity = LocalVelocity;
-        transform.Rotate(0, (grounded ? rotSpeedGround : rotSpeedAir) * Time.fixedDeltaTime * controller.StickR.x, 0);
-        LocalVelocity = localVelocity;
-    }
+    void Rotate() => transform.Rotate(0, (grounded ? rotSpeedGround : rotSpeedAir) * Time.fixedDeltaTime * controller.StickR.x, 0);
 
     void RotationMatchGravity() => transform.MatchUp(-gravity.dir);
-
-    void RotateWithLandingEstimation()
-    {
-        landingEstimationResult = landingEstimation.Estimate(landingEstimationResult);
-        float landingProgress = Mathf.Clamp01(Time.fixedDeltaTime / landingEstimationResult.time);
-        Quaternion landingRot = TransformExtension.RotationMatchUp(transform.rotation, -Gravity.AtPos(landingEstimationResult.pos).dir);
-        transform.rotation = Quaternion.Lerp(transform.rotation, landingRot, landingProgress);
-    }
-
 
     void CheckGround()
     {
@@ -207,33 +177,6 @@ public class Player : MonoBehaviour
             SetGrounded(false);
             SetGroundCollider(null);
         }
-    }
-
-
-    void Jump()
-    {
-        if (grounded) GroundJump();
-        else AirJump();
-    }
-
-    void GroundJump()
-    {
-        Vector3 localVelocity = LocalVelocity;
-        localVelocity.y = jumpVelocityY;
-        LocalVelocity = localVelocity;
-
-        SetGrounded(false);
-        SetGroundCollider(null);
-        cancelCheckGroundTime = Time.time + cancelCheckGroundAfterJump;
-
-        lastJumpTime = Time.time;
-    }
-
-    void AirJump()
-    {
-        LocalVelocity = jumpVelocityY * Vector3.up + jumpVelocityXZ * controller.StickL3;
-        cancelCheckGroundTime = Time.time + cancelCheckGroundAfterJump;
-        lastJumpTime = Time.time;
     }
 
     void UpdateMoveWithRefTransfrom()
