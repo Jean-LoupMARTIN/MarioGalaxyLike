@@ -72,7 +72,7 @@ namespace DynamicShadowProjector.LWRP.Editor
 				if (shadowTextureRenderer.TryGetComponent(out cameraData))
 				{
 					Undo.DestroyObjectImmediate(cameraData);
-					Debug.Log("UniversalAdditionalCameraData component was removed from " + shadowTextureRenderer.name + " because Dynamic Shadow Projector no longer uses camera for rendering shadow textures in URP.");
+					//Debug.Log("UniversalAdditionalCameraData component was removed from " + shadowTextureRenderer.name + " because Dynamic Shadow Projector no longer uses camera for rendering shadow textures in URP.");
 				}
 			}
 		}

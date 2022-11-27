@@ -1,10 +1,22 @@
 ﻿<Properties StartupConfiguration="{F37A6445-C8DF-B36B-83FE-0835CEC2F990}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/Agent/KillOnTriggerEnter.cs">
+    <Files>
+      <File FileName="Assets/Script/Agent/Agent.cs" Line="154" Column="1" />
+      <File FileName="Assets/Script/Agent/AgentDash.cs" Line="47" Column="1" />
+      <File FileName="Assets/Script/Agent/AgentJump.cs" Line="66" Column="14" />
+      <File FileName="Assets/Script/Agent/AgentMove.cs" Line="49" Column="1" />
+      <File FileName="Assets/Script/PlayerCamera.cs" Line="31" Column="6" />
+      <File FileName="Assets/Script/Controller/FollowTargetController.cs" Line="33" Column="35" />
+      <File FileName="Assets/Script/Agent/KillOnTrigger.cs" Line="22" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54db3cf6-bc56-4be4-b283-8f18bd453eb9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jean-loupmartin/Desktop/Unity/MarioGalaxyLike/Assets/Script/Agent/KillOnTriggerEnter.cs" relfile="Assets/Script/Agent/KillOnTriggerEnter.cs" line="18" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

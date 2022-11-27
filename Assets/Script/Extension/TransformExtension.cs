@@ -22,6 +22,20 @@ public static class TransformExtension
         return refRotation * point + refPosition;
     }
 
+
+    static public Quaternion WorldToLocal(Quaternion refRotation, Quaternion rot)
+    {
+        return Quaternion.Inverse(refRotation) * rot;
+    }
+
+    static public Quaternion LocalToWorld(Quaternion refRotation, Quaternion rot)
+    {
+        return refRotation * rot;
+    }
+
     static public Vector3 WorldToLocal(this Transform transform, Vector3 point) => WorldToLocal(transform.position, transform.rotation, point);
     static public Vector3 LocalToWorld(this Transform transform, Vector3 point) => LocalToWorld(transform.position, transform.rotation, point);
+
+    static public Quaternion WorldToLocal(this Transform transform, Quaternion rot) => WorldToLocal(transform.rotation, rot);
+    static public Quaternion LocalToWorld(this Transform transform, Quaternion rot) => LocalToWorld(transform.rotation, rot);
 }

@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class InputController : Controller
 {
+    static public InputController inst;
+    
     InputActions inputActions;
-
 
     protected override void Awake()
     {
         base.Awake();
+
+        inst = this;
 
         inputActions = new InputActions();
 

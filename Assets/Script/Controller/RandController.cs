@@ -13,7 +13,7 @@ public class RandController : Controller
         timeOffset = Random.value * 1000;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float time = Time.time + timeOffset;
 

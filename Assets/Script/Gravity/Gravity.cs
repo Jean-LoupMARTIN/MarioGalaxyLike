@@ -8,7 +8,7 @@ public class Gravity : MonoBehaviour
 {
     static public Gravity inst;
 
-    [SerializeField] float acceleration = 40f;
+    [SerializeField] float coef = 1f;
 
     Dictionary<Vector3Int, (Vector3 dir, float dist, GravityField field)> gridStaticField = new Dictionary<Vector3Int, (Vector3, float, GravityField)>();
     [SerializeField] bool useGrid = false;
@@ -20,7 +20,7 @@ public class Gravity : MonoBehaviour
     [SerializeField] float distAtGradientMax = 10;
 
 
-    public float Acceleration { get => acceleration; }
+    public static float Coef { get => inst.coef; }
 
 
     void OnDrawGizmos()
@@ -89,6 +89,4 @@ public class Gravity : MonoBehaviour
 
         return distToStaticSrf < distToDynamicSrf ? (dirToStaticSrf, distToStaticSrf, fieldStaticSrf) : (dirToDynamicSrf, distToDynamicSrf, fieldDynamicSrf);
     }
-
-    static public Vector3 AcceAtPos(Vector3 pos) => AtPos(pos).dir * inst.acceleration;
 }

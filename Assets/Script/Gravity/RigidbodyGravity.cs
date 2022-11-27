@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RigidbodyGravity : MonoBehaviour
 {
+    [SerializeField] float gravityAceeleration = 40;
+
     Rigidbody rb;
 
     void Awake()
@@ -14,6 +16,6 @@ public class RigidbodyGravity : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(Gravity.AcceAtPos(transform.position), ForceMode.Acceleration);
+        rb.AddForce(gravityAceeleration * Gravity.Coef * Gravity.AtPos(transform.position).dir, ForceMode.Acceleration);
     }
 }
